@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('~assets/images/background.png') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+.white {
+    color: #fff;
+}
+
+.sacramento {
+    font-family: "Sacramento",Arial,serif;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
+
+.faded-background {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.horizontal-line {
+    border-top: 1px solid #888;
+    padding-top: 15px;
+    margin-top: 15px;
+    font-size: 85%;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+/* Desktop-specific */
+@media screen and (min-width: 768px) {
+    .transparent-md {
+        background-color: transparent !important;
+    }
+}
+
+/* Mobile-specific */
+@media screen and (max-width: 767px) {
+    .transparent-xs {
+        background-color: transparent !important;
+	}
+}

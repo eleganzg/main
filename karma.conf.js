@@ -25,14 +25,21 @@ module.exports = function (config) {
             'text/x-typescript': ['ts', 'tsx']
         },
         coverageIstanbulReporter: {
-            reports: ['html', 'lcovonly'],
-            fixWebpackSourcePaths: true
+            reports: ['html', 'lcovonly', 'text-summary'],
+            dir: './coverage',
+            fixWebpackSourcePaths: true,
+            skipFilesWithNoCoverage: true,
+            'report-config': {
+                html: {
+                    subdir: 'html'
+                }
+            }
         },
         angularCli: {
             environment: 'dev'
         },
         reporters: config.angularCli && config.angularCli.codeCoverage
-            ? ['progress', 'coverage-istanbul']
+            ? ['progress', 'kjhtml', 'coverage-istanbul']
             : ['progress', 'kjhtml'],
         port: 9876,
         colors: true,
