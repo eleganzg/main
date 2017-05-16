@@ -5,6 +5,7 @@ import { UIRouterModule } from '@uirouter/angular';
 import { HeaderComponent } from './header';
 import { FooterComponent } from './footer';
 import { HomeComponent } from './home';
+import { AboutUsComponent } from './about-us';
 
 const states = [
     {
@@ -20,6 +21,13 @@ const states = [
         url: '/inicio',
         views: {
             'main@': { component: HomeComponent }
+        }
+    },
+    {
+        name: 'app.aboutUs',
+        url: '/conocenos',
+        views: {
+            'main@': { component: AboutUsComponent }
         }
     }
 ];

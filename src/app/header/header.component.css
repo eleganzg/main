@@ -2,3 +2,7 @@
     font-size: 40px;
     margin: 0;
 }
+
+nav.navbar {
+    line-height: 1.0;
+}
