@@ -1,0 +1,15 @@
+.footer {
+    position: relative;
+    margin-top: -50px;
+    height: 35px;
+    clear: both;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Mobile-specific */
+@media screen and (max-width: 767px) {
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
