@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { UIRouterModule } from "@uirouter/angular";
+import { UIRouterModule } from '@uirouter/angular';
 
 import { HeaderComponent } from './header';
 import { FooterComponent } from './footer';
+import { HomeComponent } from './home';
 
 const states = [
     {
@@ -16,13 +17,16 @@ const states = [
     },
     {
         name: 'app.home',
-        url: '/home'
+        url: '/inicio',
+        views: {
+            'main@': { component: HomeComponent }
+        }
     }
 ];
 
 @NgModule({
     imports: [
-        UIRouterModule.forRoot({ states: states, otherwise: '/home', useHash: true })
+        UIRouterModule.forRoot({ states: states, otherwise: '/inicio', useHash: true })
     ],
     exports: [
         UIRouterModule
