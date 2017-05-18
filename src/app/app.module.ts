@@ -16,6 +16,7 @@ import { ServicesComponent } from './services';
 import { ContactComponent } from './contact';
 
 import { ContactService } from './contact';
+import { LoginComponent } from './login';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { ContactService } from './contact';
         HomeComponent,
         AboutUsComponent,
         ServicesComponent,
-        ContactComponent
+        ContactComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

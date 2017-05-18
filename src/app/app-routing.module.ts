@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { UIRouterModule } from '@uirouter/angular';
+import { UIRouterModule, Transition } from '@uirouter/angular';
 
 import { HeaderComponent } from './header';
 import { FooterComponent } from './footer';
@@ -8,6 +8,11 @@ import { HomeComponent } from './home';
 import { AboutUsComponent } from './about-us';
 import { ServicesComponent } from './services';
 import { ContactComponent } from './contact';
+import { LoginComponent } from './login';
+
+export function loginResolve(trans) {
+    return { error: trans.params().error, logout: trans.params().logout };
+}
 
 const states = [
     {
@@ -45,6 +50,20 @@ const states = [
         views: {
             'main@': { component: ContactComponent }
         }
+    },
+    {
+        name: 'app.login',
+        url: '/login?error?logout',
+        views: {
+            'main@': { component: LoginComponent }
+        },
+        resolve: [
+            {
+                token: 'status',
+                deps: [Transition],
+                resolveFn: loginResolve
+            }
+        ]
     }
 ];
 
