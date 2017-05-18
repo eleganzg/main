@@ -1,0 +1,212 @@
+<div class="row">
+    <div class="page-header">
+        <h2 class="white">Contacto</h2>
+    </div>
+    <div class="col-sm-12">
+        <div class="card card-info faded-background">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <h4>Oficinas</h4>
+                        <div>
+                            <span>Cumbres 2do Sector</span>
+                        </div>
+                        <div>
+                            <span>eleganzgrupo@gmail.com</span>
+                        </div>
+                        <div>
+                            <label>Celular:</label> <span>811-033-5100</span>
+                        </div>
+                    </div>
+                    <div class="horizontal-line hidden-md-up"></div>
+                    <div class="col-sm-12 col-md-4">
+                        <h4>Contacto Directo</h4>
+                        <div>
+                            <span>Glenda Baker</span>
+                        </div>
+                        <div>
+                            <label>Celular:</label> <span>811-033-5100</span>
+                        </div>
+                    </div>
+                    <div class="horizontal-line hidden-md-up"></div>
+                    <div class="col-sm-12 col-md-4">
+                        <h4>Coordinadora</h4>
+                        <div>
+                            <span>Priscila Ram&#237;rez</span>
+                        </div>
+                        <div>
+                            <span>priscilakrb@gmail.com</span>
+                        </div>
+                        <div>
+                            <label>Celular:</label> <span>812-334-4665</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <form id="contactForm" name="contactForm" class="contact-form"
+                        novalidate="novalidate" #contactForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="form-group">
+                                <label class="sr-only" for="name">Nombre</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <fa name="user"></fa>
+                                    </span>
+                                    <input id="name" type="text"
+                                        class="form-control" name="name"
+                                        placeholder="Nombre" required="required"
+                                        minlength="{{validation.name.minlength}}"
+                                        maxlength="{{validation.name.maxlength}}"
+                                        pattern="{{validation.name.pattern}}"
+                                        [(ngModel)]="contact.name" #name="ngModel" />
+                                </div>
+                                <div *ngIf="name.errors && (name.dirty || name.touched)"
+                                        class="alert alert-danger">
+                                    <div [hidden]="!name.errors.required">
+                                        {{validation.name.messages.required}}
+                                    </div>
+                                    <div [hidden]="!name.errors.minlength">
+                                        {{validation.name.messages.minlength}}
+                                    </div>
+                                    <div [hidden]="!name.errors.maxlength">
+                                        {{validation.name.messages.maxlength}}
+                                    </div>
+                                    <div [hidden]="!name.errors.pattern">
+                                        {{validation.name.messages.pattern}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="email">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <fa name="at"></fa>
+                                    </span>
+                                    <input id="email" type="text"
+                                        class="form-control" name="email"
+                                        placeholder="Email" required="required"
+                                        minlength="{{validation.email.minlength}}"
+                                        maxlength="{{validation.email.maxlength}}"
+                                        pattern="{{validation.email.pattern}}"
+                                        [(ngModel)]="contact.email" #email="ngModel" />
+                                </div>
+                                <div *ngIf="email.errors && (email.dirty || email.touched)"
+                                        class="alert alert-danger">
+                                    <div [hidden]="!email.errors.required">
+                                        {{validation.email.messages.required}}
+                                    </div>
+                                    <div [hidden]="!email.errors.minlength">
+                                        {{validation.email.messages.minlength}}
+                                    </div>
+                                    <div [hidden]="!email.errors.maxlength">
+                                        {{validation.email.messages.maxlength}}
+                                    </div>
+                                    <div [hidden]="!email.errors.pattern">
+                                        {{validation.email.messages.pattern}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="phone">Teléfono</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <fa name="phone"></fa>
+                                    </span>
+                                    <input id="phone" type="text"
+                                        class="form-control" name="phone"
+                                        placeholder="Teléfono" required="required"
+                                        minlength="{{validation.phone.minlength}}"
+                                        maxlength="{{validation.phone.maxlength}}"
+                                        pattern="{{validation.phone.pattern}}"
+                                        [(ngModel)]="contact.phone" #phone="ngModel" />
+                                </div>
+                                <div *ngIf="phone.errors && (phone.dirty || phone.touched)"
+                                        class="alert alert-danger">
+                                    <div [hidden]="!phone.errors.required">
+                                        {{validation.phone.messages.required}}
+                                    </div>
+                                    <div [hidden]="!phone.errors.minlength">
+                                        {{validation.phone.messages.minlength}}
+                                    </div>
+                                    <div [hidden]="!phone.errors.maxlength">
+                                        {{validation.phone.messages.maxlength}}
+                                    </div>
+                                    <div [hidden]="!phone.errors.pattern">
+                                        {{validation.phone.messages.pattern}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="subject">Asunto</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <fa name="tag"></fa>
+                                    </span>
+                                    <input id="subject" type="text"
+                                        class="form-control" name="subject"
+                                        placeholder="Asunto" required="required"
+                                        minlength="{{validation.subject.minlength}}"
+                                        maxlength="{{validation.subject.maxlength}}"
+                                        pattern="{{validation.subject.pattern}}"
+                                        [(ngModel)]="contact.subject" #subject="ngModel" />
+                                </div>
+                                <div *ngIf="subject.errors && (subject.dirty || subject.touched)"
+                                        class="alert alert-danger">
+                                    <div [hidden]="!subject.errors.required">
+                                        {{validation.subject.messages.required}}
+                                    </div>
+                                    <div [hidden]="!subject.errors.minlength">
+                                        {{validation.subject.messages.minlength}}
+                                    </div>
+                                    <div [hidden]="!subject.errors.maxlength">
+                                        {{validation.subject.messages.maxlength}}
+                                    </div>
+                                    <div [hidden]="!subject.errors.pattern">
+                                        {{validation.subject.messages.pattern}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-5">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">Mensaje</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <fa name="comment"></fa>
+                                    </span>
+                                    <textarea id="message" rows="8"
+                                        class="form-control" name="message"
+                                        placeholder="Mensaje" required="required"
+                                        minlength="{{validation.message.minlength}}"
+                                        maxlength="{{validation.message.maxlength}}"
+                                        [(ngModel)]="contact.message" #message="ngModel" >
+                                    </textarea>
+                                </div>
+                                <div *ngIf="message.errors && (message.dirty || message.touched)"
+                                        class="alert alert-danger">
+                                    <div [hidden]="!message.errors.required">
+                                        {{validation.message.messages.required}}
+                                    </div>
+                                    <div [hidden]="!message.errors.minlength">
+                                        {{validation.message.messages.minlength}}
+                                    </div>
+                                    <div [hidden]="!message.errors.maxlength">
+                                        {{validation.message.messages.maxlength}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3">
+                            <button type="submit"
+                                class="btn btn-primary"
+                                [disabled]="!contactForm.form.valid">
+                                    Envíar Mensaje
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

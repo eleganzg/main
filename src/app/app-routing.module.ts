@@ -7,6 +7,7 @@ import { FooterComponent } from './footer';
 import { HomeComponent } from './home';
 import { AboutUsComponent } from './about-us';
 import { ServicesComponent } from './services';
+import { ContactComponent } from './contact';
 
 const states = [
     {
@@ -36,6 +37,13 @@ const states = [
         url: '/servicios',
         views: {
             'main@': { component: ServicesComponent }
+        }
+    },
+    {
+        name: 'app.contact',
+        url: '/contacto',
+        views: {
+            'main@': { component: ContactComponent }
         }
     }
 ];
